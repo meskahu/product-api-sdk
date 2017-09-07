@@ -114,7 +114,6 @@ class MeskaProductApiCurl
     private function call()
     {
         $response = curl_exec($this->_ch);
-        var_dump(curl_error($this->_ch));
         curl_close($this->_ch);
         return $response;
     }

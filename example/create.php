@@ -4,10 +4,6 @@ include_once '../MeskaProductApi.php';
 include_once '_config_meska.php';
 
 $api = new MeskaProductApi($api_key, $shop_id, $api_server_url, $mode);
-var_dump($api->get_categories());
-
-//var_dump($api->get_shelves());
-
 
 $product = array(
     'product_name' => 'api test',
@@ -27,14 +23,14 @@ $product = array(
     'automatic_renew' => 0,
     'Categories' => array(
         array(
-            'id' => 304,
-            'name' => 'Állatfelszerelések'
+            'id' => 76,
+            'name' => 'Gomb'
         )
     ),
     'Technics' => array(
         array(
-            'id' => 472,
-            'name' => 'Baba-és bábkészítés'
+            'id' => 1,
+            'name' => 'Agyagozás'
         )
     ),
     'Material' => array(
@@ -45,7 +41,7 @@ $product = array(
     ),
     'Colors' => array(
         array(
-            'id' => 512,
+            'id' => 535,
             'name' => 'Arany'
         )
     ),
@@ -54,12 +50,4 @@ $product = array(
     )
 );
 
-//var_dump($api->create_product(json_encode($product)));
-
-$product_code = 123456;
-
-$product['product_code'] = $product_code;
-$product['price'] = 1000;
-//var_dump($api->update_product($product_code, json_encode($product)));
-
-//var_dump($api->delete_product($product_code));
+var_dump($api->create_product(json_encode($product)));
